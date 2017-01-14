@@ -1,4 +1,4 @@
-import Chess from 'chess.js';
+const Chess = require('chess.js');
 
 const fen = (state = new Chess().fen(), action) => {
 

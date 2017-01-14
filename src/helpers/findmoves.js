@@ -1,4 +1,4 @@
-import Chess from 'chess.js';
+import { Chess } from 'chess.js';
 import { fenIndexToPos } from '../helpers/fenmap.js';
 
 const findMoves = (fen, pos, array = []) => {

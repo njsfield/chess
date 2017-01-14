@@ -5,19 +5,19 @@ it('At start of game, returns array of Objects with all pieces', () => {
   let testObj1 = {
     color: 'white',
     key: 'P',
-    code: '&#9817;',
+    code: '\u2659',
     position: 'f2'
   };
   let testObj2 = {
     color: 'black',
     key: 'p',
-    code: '&#9823;',
+    code: '\u265F',
     position: 'e7'
   };
   let testObj3 = {
     color: 'black',
     key: 'r',
-    code: '&#9820;',
+    code: '\u265C',
     position: 'h8'
   };
 
@@ -33,7 +33,7 @@ it('Mid game, returns only pieces left', () => {
   let testObj1 = {
     color: 'black',
     key: 'p',
-    code: '&#9823;',
+    code: '\u265F',
     position: 'd7'
   };
 

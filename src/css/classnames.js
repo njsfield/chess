@@ -11,4 +11,4 @@ export const darkTileClass = 'absolute dib w-eighth h-eighth bg-light-blue';
 export const optionTileClass = 'absolute dib w-eighth h-eighth bg-blue';
 
 // Piece Class
-export const pieceClass = 'absolute dib w-eighth h-eighth z-2 black tc f-50';
+export const pieceClass = 'absolute dib w-eighth h-eighth z-2 black tc pointer f-50';
