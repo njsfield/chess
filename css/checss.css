@@ -1,0 +1,83 @@
+/* Extra for Tachyons */
+ .h-100vw {
+   height: 100vw;
+ }
+ .mh-32 {
+   max-height: 32rem;
+ }
+ .w-eighth {
+   width: 12.5%;
+ }
+ .h-eighth {
+   height: 12.5%;
+ }
+
+
+
+/*-- Chess Pieces-*/
+
+/* font size adjust */
+.f-50 {
+ font-size: 200%;
+}
+@media screen and (min-width: 25rem) {
+ .f-50 {
+   font-size: 250%;
+ }
+}
+@media screen and (min-width: 30rem) {
+ .f-50 {
+   font-size: 300%;
+ }
+}
+
+ /* Columns */
+ [class*='--a'] {
+   left: 0;
+ }
+ [class*='--b'] {
+   left: 12.5%;
+ }
+ [class*='--c'] {
+   left: 25%;
+ }
+ [class*='--d'] {
+   left: 37.5%;
+ }
+ [class*='--e'] {
+   left: 50%;
+ }
+ [class*='--f'] {
+   left: 62.5%;
+ }
+ [class*='--g'] {
+   left: 75%;
+ }
+ [class*='--h'] {
+   left: 87.5%;
+ }
+ /* Rows */
+ [class*='1--'] {
+   bottom: 0;
+ }
+ [class*='2--'] {
+   bottom: 12.5%;
+ }
+ [class*='3--'] {
+   bottom: 25%;
+ }
+ [class*='4--'] {
+   bottom: 37.5%;
+ }
+ [class*='5--'] {
+   bottom: 50%;
+ }
+ [class*='6--'] {
+   bottom: 62.5%;
+ }
+ [class*='7--'] {
+   bottom: 75%;
+ }
+ [class*='8--'] {
+   bottom: 87.5%;
+ }
