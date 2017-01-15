@@ -1,7 +1,13 @@
 import { whiteTileClass,
         darkTileClass,
         pieceClass,
-        submitClass } from '../css/classnames';
+        submitClass,
+        whiteMovedMod,
+        blackMovedMod,
+        whiteTargettedMod,
+        blackTargettedMod,
+        whiteSelectedMod,
+        blackSelectedMod} from '../css/classnames';
 import { fenIndexToPos, pieceCode } from '../helpers/fenmap';
 
 const iter = (num) => new Array(num).fill(0);
@@ -35,9 +41,9 @@ export const pieceStyle = (state, name, position) => {
   position = `--${position}--`;
   let color;
   switch(state) {
-    case 'SELECTED'     :
-    case 'MOVED'  : { color = white ? 'white bg-green smooth-change z-2' : 'red bg-black smooth-change z-2'; break; }
-    case 'TARGETTED' : { color = white ? 'white bg-green o-50 smooth-change' : 'red bg-black o-50 smooth-change'; break; }
+    case 'SELECTED' : { color = white ? whiteSelectedMod : blackSelectedMod; break; }
+    case 'MOVED'  : { color = white ? whiteMovedMod : blackMovedMod; break; }
+    case 'TARGETTED' : { color = white ? whiteTargettedMod : blackTargettedMod ; break; }
     default : { color = `black`; }
   }
   return `${base} ${color} ${position}`;
