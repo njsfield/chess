@@ -26,10 +26,12 @@ export const pieceStyles = iter(32).map((c,i) => {
   };
 });
 
-export const pieceStyle = (base, selected, oldpos, newpos) => {
-  return selected ?
-    `${base} red --${newpos || oldpos}--` :
-    `${base} --${oldpos}--`;
+export const pieceStyle = (base, selected, oldpos, newpos, highlighted) => {
+  return highlighted ?
+          `${base} smooth-change --${oldpos}-- o-20` :
+            selected ?
+              `${base} smooth-change red --${newpos || oldpos}-- bg-green` :
+                `${base} --${oldpos}--`;
 };
 
 export const submitStyle = (from, to) => {

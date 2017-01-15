@@ -26,7 +26,8 @@ const mergeProps = ({ highlighted }, { dispatch }, {style, position }) => {
     onClick: () => {
       highlighted ?
         dispatch(moveTo(position)) :
-        dispatch(stay());}
+        dispatch(stay())
+    ;}
   };
 };
 
