@@ -26,6 +26,15 @@
    transition: all .15s ease;
  }
 
+.flicker {
+    animation: flicker .1s linear 0s infinite alternate;
+}
+
+@keyframes flicker {
+    from { opacity: 0.5;}
+    to { opacity: 1;}
+}
+
 
 
 /*-- Chess Pieces-*/

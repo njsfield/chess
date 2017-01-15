@@ -1069,6 +1069,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .bg-white-10 { background-color: rgba( 255, 255, 255, .1 ); }
 /* Background colors */
 .bg-black { background-color: #000; }
+.bg-brown { background-color: #BCAAA4; }
 .bg-near-black { background-color: #111; }
 .bg-dark-gray { background-color: #333; }
 .bg-mid-gray { background-color: #555; }
