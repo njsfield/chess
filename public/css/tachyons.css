@@ -1732,7 +1732,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .shadow-hover:hover::after, .shadow-hover:focus::after { opacity: 1; }
 /* Combine with classes in skins and skins-pseudo for
  * many different transition possibilities. */
-.bg-animate, .bg-animate:hover, .bg-animate:focus { -webkit-transition: background-color .15s ease-in-out; transition: background-color .15s ease-in-out; }
+.bg-animate, .bg-animate:hover, .bg-animate:focus { -webkit-transition: background-color .1s ease-in-out; transition: background-color .1s ease-in-out; }
 .bg-animate-slow, .bg-animate-slow:hover, .bg-animate-slow:focus { -webkit-transition: background-color .3s ease-in-out; transition: background-color .3s ease-in-out; }
 /*
   Z-INDEX

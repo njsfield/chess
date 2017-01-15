@@ -5,7 +5,7 @@ import { selectedPiece } from '../actions';
 let Piece = ({style, fen, name, position, selected, entity, onClick}) => {
   style = selected ? `${style} red` : style;
   return (
-    <span className={style} onClick={() => onClick()}>{entity}</span>
+    <span className={style} onTouchStart={() => onClick()} onMouseDown={() => onClick()}>{entity}</span>
   );
 };
 
