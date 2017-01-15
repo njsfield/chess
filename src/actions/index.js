@@ -1,9 +1,8 @@
 // Actions
 
-export const selectedPiece = (piece, from, fen) => {
+export const selectedPiece = (from, fen) => {
   return {
     type: 'SELECTED_PIECE',
-    piece,
     from,
     fen
   };

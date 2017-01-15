@@ -1,4 +1,7 @@
-import { whiteTileClass, darkTileClass, pieceClass, submitClass } from '../css/classnames';
+import { whiteTileClass,
+        darkTileClass,
+        pieceClass,
+        submitClass } from '../css/classnames';
 import { fenIndexToPos, pieceCode } from '../helpers/fenmap';
 
 const iter = (num) => new Array(num).fill(0);
@@ -26,12 +29,18 @@ export const pieceStyles = iter(32).map((c,i) => {
   };
 });
 
-export const pieceStyle = (base, selected, oldpos, newpos, highlighted) => {
-  return highlighted ?
-          `${base} smooth-change --${oldpos}-- o-20` :
-            selected ?
-              `${base} smooth-change red --${newpos || oldpos}-- bg-green` :
-                `${base} --${oldpos}--`;
+export const pieceStyle = (state, name, position) => {
+  const white = /[A-Z]/.test(name);
+  const base = pieceClass;
+  position = `--${position}--`;
+  let color;
+  switch(state) {
+    case 'SELECTED'     :
+    case 'MOVED'  : { color = white ? 'white bg-green smooth-change z-2' : 'red bg-black smooth-change z-2'; break; }
+    case 'TARGETTED' : { color = white ? 'white bg-green o-50 smooth-change' : 'red bg-black o-50 smooth-change'; break; }
+    default : { color = `black`; }
+  }
+  return `${base} ${color} ${position}`;
 };
 
 export const submitStyle = (from, to) => {
