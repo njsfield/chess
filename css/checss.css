@@ -16,8 +16,14 @@
     top: 50%;
     transform: translate(-50%, -50%);
  }
+
+ .bottom-middle {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+ }
  .smooth-change {
-   transition: all .3s ease;
+   transition: all .15s ease;
  }
 
 
