@@ -1,24 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { pieceStyle } from '../css/mapstyles';
 import { selectedPiece } from '../actions';
 
-let Piece = ({style, fen, name, position, selected, entity, onClick}) => {
-  style = selected ? `${style} red` : style;
+
+let Piece = ({style, fen, name, position, newPosition, selected, entity, onClick}) => {
   return (
-    <span className={style} onTouchStart={() => onClick()} onMouseDown={() => onClick()}>{entity}</span>
+    <span className={pieceStyle(style, selected, position, newPosition)}
+          onTouchStart={() => onClick()}
+          onMouseDown={() => onClick()}>{entity}</span>
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ({selected, desired, fen}, {position}) => {
   return {
-    selected: state.selected.position === ownProps.position,
-    fen: state.fen
+    selected: selected.position === position,
+    newPosition: desired,
+    fen: fen
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch, {name, position, fen}) => {
   return {
-    onClick: () => dispatch(selectedPiece(ownProps.name, ownProps.position, ownProps.fen))
+    onClick: () => dispatch(selectedPiece(name, position, fen))
   };
 };
 

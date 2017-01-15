@@ -1,7 +1,7 @@
 import React from 'react';
 import Tile from '../containers/tile';
 import Piece from '../containers/piece';
-import { tileStyles, pieceStyles } from '../helpers/mapstyles';
+import { tileStyles, pieceStyles } from '../css/mapstyles';
 import { boardClass } from '../css/classnames';
 
 const Board = (count) => (

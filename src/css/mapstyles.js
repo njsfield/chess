@@ -19,9 +19,15 @@ export const pieceStyles = iter(32).map((c,i) => {
   let num = i > 15 ? i + 32 : i;
   let pos = fenIndexToPos(num);
   return {
-    style: `${pieceClass} --${pos}--`,
+    style: `${pieceClass}`,
     entity: pieceCode[pieceSequence[i]],
     name: pieceSequence[i],
     position: pos
   };
 });
+
+export const pieceStyle = (base, selected, oldpos, newpos) => {
+  return selected ?
+    `${base} red --${newpos || oldpos}--` :
+    `${base} --${oldpos}--`;
+};

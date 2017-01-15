@@ -11,4 +11,4 @@ export const darkTileClass = 'bg-animate absolute dib w-eighth h-eighth bg-light
 export const optionTileClass = 'bg-blue-i pointer';
 
 // Piece Class
-export const pieceClass = 'absolute dib w-eighth h-eighth z-2 black tc pointer f-50';
+export const pieceClass = 'absolute dib w-eighth h-eighth z-2 black smooth-change tc pointer f-50';

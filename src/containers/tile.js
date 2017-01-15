@@ -1,23 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { moveTo, stay } from '../actions';
 
-let Tile = ({style, selected, position}) => {
-  style = selected ? `${style} bg-blue-i pointer` : style;
+let Tile = ({style, highlighted, position, onClick}) => {
+  style = highlighted ? `${style} bg-blue-i pointer` : style;
   return (
-    <span className={style}></span>
+    <span className={style}
+      onTouchStart={() => onClick()}
+      onMouseDown={() => onClick()}
+      ></span>
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ({selected}, {position}) => {
   return {
-    selected: state.selected.options.indexOf(ownProps.position) > -1 ||
-              state.selected.position === ownProps.position
+    highlighted: selected.options.includes(position),
   };
 };
 
+const mergeProps = ({ highlighted }, { dispatch }, {style, position }) => {
+  return {
+    highlighted,
+    style,
+    position,
+    onClick: () => {
+      highlighted ?
+        dispatch(moveTo(position)) :
+        dispatch(stay());}
+  };
+};
+
+
 Tile = connect(
   mapStateToProps,
-  null
+  null,
+  mergeProps
 )(Tile);
 
 export default Tile;
