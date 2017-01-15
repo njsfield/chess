@@ -1,8 +1,12 @@
 import React from 'react';
-import Board from './board';
+import Board from '../containers/board';
+import Submit from '../containers/submit';
 
 const App = () => (
-  <Board />
+  <div>
+    <Board />
+    <Submit />
+  </div>
 );
 
 export default App;

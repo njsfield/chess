@@ -16,9 +16,11 @@ export const moveTo = (to) => {
   };
 };
 
-export const confirmMove = () => {
+export const confirmMove = (fen, move) => {
   return {
     type: 'CONFIRM_MOVE',
+    move,
+    fen: fen
   };
 };
 

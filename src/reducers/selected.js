@@ -1,13 +1,13 @@
 import findMoves from '../helpers/findmoves.js';
 
-const selected = (state = {piece: '', position: '', options: []}, action) => {
+const selected = (state = {piece: '', position: '', options: []}, {type, fen, piece, from}) => {
 
-  switch (action.type) {
+  switch (type) {
     case 'SELECTED_PIECE':
       return {
-        piece: action.piece,
-        position: action.from,
-        options: findMoves(action.fen, action.from)
+        piece,
+        position: from,
+        options: findMoves(fen, from)
       };
     case 'CONFIRM_MOVE':
     case 'STAY':

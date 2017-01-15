@@ -1,10 +1,12 @@
 const Chess = require('chess.js');
 
-const fen = (state = new Chess().fen(), action) => {
+const fen = (state = new Chess().fen(), {type, fen, move}) => {
 
-  switch (action.type) {
+  switch (type) {
     case 'CONFIRM_MOVE':
-      return new Chess(action.fen).move(action.move).fen();
+      let newPos = new Chess(fen);
+      newPos.move(move);
+      return newPos.fen();
     default:
       return state;
   }

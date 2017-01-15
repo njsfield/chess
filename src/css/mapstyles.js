@@ -1,4 +1,4 @@
-import { whiteTileClass, darkTileClass, pieceClass } from '../css/classnames';
+import { whiteTileClass, darkTileClass, pieceClass, submitClass } from '../css/classnames';
 import { fenIndexToPos, pieceCode } from '../helpers/fenmap';
 
 const iter = (num) => new Array(num).fill(0);
@@ -30,4 +30,10 @@ export const pieceStyle = (base, selected, oldpos, newpos) => {
   return selected ?
     `${base} red --${newpos || oldpos}--` :
     `${base} --${oldpos}--`;
+};
+
+export const submitStyle = (from, to) => {
+  return from && to ?
+    `${submitClass} db` :
+    `${submitClass} dn`;
 };

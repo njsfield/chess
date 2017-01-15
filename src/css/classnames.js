@@ -12,3 +12,6 @@ export const optionTileClass = 'bg-blue-i pointer';
 
 // Piece Class
 export const pieceClass = 'absolute dib w-eighth h-eighth z-2 black smooth-change tc pointer f-50';
+
+// Submit Class
+export const submitClass = 'absolute bottom-middle pa3 pointer sans-serif bn br2 bg-black white';

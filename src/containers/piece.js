@@ -16,7 +16,6 @@ const mapStateToProps = ({selected, desired, fen}, {position}) => {
   return {
     selected: selected.position === position,
     newPosition: desired,
-    fen: fen
   };
 };
 
