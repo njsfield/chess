@@ -1099,6 +1099,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .bg-navy { background-color: #001b44; }
 .bg-dark-blue { background-color: #00449e; }
 .bg-blue { background-color: #357edd; }
+.bg-blue-i { background-color: #357edd !important; }
 .bg-light-blue { background-color: #96ccff; }
 .bg-lightest-blue { background-color: #cdecff; }
 .bg-washed-blue { background-color: #f6fffe; }
@@ -1732,6 +1733,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
 /* Combine with classes in skins and skins-pseudo for
  * many different transition possibilities. */
 .bg-animate, .bg-animate:hover, .bg-animate:focus { -webkit-transition: background-color .15s ease-in-out; transition: background-color .15s ease-in-out; }
+.bg-animate-slow, .bg-animate-slow:hover, .bg-animate-slow:focus { -webkit-transition: background-color .3s ease-in-out; transition: background-color .3s ease-in-out; }
 /*
   Z-INDEX
   Base
