@@ -10,7 +10,7 @@ const Board = (count) => (
       <Tile style={style} key={i} />
     )}
     {pieceStyles.map((x, i) =>
-      <Piece style={x.style} key={i} ent={x.ent}/>
+      <Piece style={x.style} key={i} name={x.name} position={x.position} entity={x.entity}/>
     )}
   </div>
 );

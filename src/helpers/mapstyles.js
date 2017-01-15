@@ -17,6 +17,8 @@ export const pieceStyles = iter(32).map((c,i) => {
   let pos = fenIndexToPos(num);
   return {
     style: `${pieceClass} --${pos}--`,
-    ent: pieceCode[pieceSequence[i]]
+    entity: pieceCode[pieceSequence[i]],
+    name: pieceSequence[i],
+    position: pos
   };
 });

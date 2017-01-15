@@ -1,16 +1,17 @@
 // Actions
 
-export const selectedPiece = (piece, from) => {
+export const selectedPiece = (piece, from, fen) => {
   return {
     type: 'SELECTED_PIECE',
     piece,
-    from
+    from,
+    fen
   };
 };
 
 export const moveTo = (to) => {
   return {
-    type: 'SELECTED_PIECE',
+    type: 'MOVE_TO',
     to
   };
 };

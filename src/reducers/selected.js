@@ -6,8 +6,8 @@ const selected = (state = [], action) => {
     case 'SELECTED_PIECE':
       return {
         piece: action.piece,
-        position: action.position,
-        options: findMoves(action.fen, action.position)
+        position: action.from,
+        options: findMoves(action.fen, action.from)
       };
     case 'CONFIRM_MOVE':
     case 'STAY':
