@@ -11,11 +11,13 @@
  .h-eighth {
    height: 12.5%;
  }
-
  .middle {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+ }
+ .smooth-change {
+   transition: all .3s ease;
  }
 
 
