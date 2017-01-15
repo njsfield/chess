@@ -9,7 +9,10 @@ export const tileStyles = iter(64).map((c,i) => {
   let num = floor(i / 8) % 2 ? i + 1 : i;
   let pos = fenIndexToPos(i);
   let style = num % 2 === 0 ? whiteTileClass : darkTileClass;
-  return `${style} --${pos}--`;
+  return {
+    style: `${style} --${pos}--`,
+    position: pos
+  };
 });
 
 export const pieceStyles = iter(32).map((c,i) => {
