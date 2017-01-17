@@ -14,10 +14,4 @@ const chessReducers = combineReducers({
   desired
 });
 
-// Maybe Remove and just export chessReducers ?
-const chessApp = (state, action) => {
-  return chessReducers(state, action);
-};
-
-
-export default chessApp;
+export default chessReducers;

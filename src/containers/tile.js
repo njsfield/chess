@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { moveTo, stay } from '../actions';
+import { tileAction } from '../actions/thunks';
 import { optionTileClass } from '../css/classnames';
 
 let Tile = ({style, highlighted, options, position, onClick}) => {
   return (
     <span className={style + ' ' + highlighted}
-      onTouchStart={() => onClick()}
-      onMouseDown={() => onClick()}
+      onTouchStart={() => onClick(position)}
+      onMouseDown={() => onClick(position)}
       ></span>
   );
 };
@@ -20,24 +20,16 @@ const mapStateToProps = ({ options }, {position}) => {
   }
 };
 
-const mergeProps = ({ options, highlighted }, { dispatch }, { style, position }) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    style,
-    position,
-    highlighted,
-    onClick: () => {
-      options.includes(position) ?
-        dispatch(moveTo(position)) :
-        dispatch(stay())
-    ;}
-  };
+    onClick: (position) => dispatch(tileAction(position))
+    };
 };
 
 
 Tile = connect(
   mapStateToProps,
-  null,
-  mergeProps
+  mapDispatchToProps
 )(Tile);
 
 export default Tile;
