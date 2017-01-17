@@ -1,3 +1,4 @@
+import Chess from 'chess.js';
 // fenMap
 // ======
 // Input = rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2
@@ -15,6 +16,8 @@ const prepFen = (str) =>
      .reverse()
      .join('')
      .split('');
+
+export const player = (fen) => fen.split(" ")[1] === "w" ? "white" : "black";
 
 export const pieceCode = {
   // White
@@ -45,3 +48,20 @@ export const fenMap = (fen) => prepFen(fen).map((piece, i) => {
     position: fenIndexToPos(i)
   };
 }).filter(i => i.code);
+
+// tens fen and position, finds available moves
+export const pieceMoves = (fen, pos, array = []) => {
+  for (let i = 1; i <= 64; i+=1) {
+    let move = new Chess(fen).move({from: pos, to: fenIndexToPos(i)});
+    if (move ) array.push(move.to);
+  }
+  return array;
+};
+
+// Takes fenMap, returns pieces that can move
+export const canMove = (fen, color) => {
+  return fenMap(fen)
+        .filter(profile => profile['color'] === color)
+        .map(profile => profile.position)
+        .filter(piece => pieceMoves(fen, piece).length);
+};

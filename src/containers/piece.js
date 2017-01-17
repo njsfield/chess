@@ -24,7 +24,7 @@ const mapStateToProps = ({selected, options, desired, fen}, {position}) => {
   }
 };
 
-
+// ConfirmMove move is thunk
 const mergeProps = ({ state, moved, desired }, { dispatch }, {name, fen, position, entity }) => {
   return {
     state, name, position, entity, moved,
@@ -32,7 +32,7 @@ const mergeProps = ({ state, moved, desired }, { dispatch }, {name, fen, positio
       switch (state) {
         case 'STATIC' : return dispatch(selectedPiece(position, fen));
         case 'TARGETTED' : return dispatch(moveTo(position));
-        case 'MOVED' : return dispatch(confirmMove(fen, {from: position, to: moved}));
+        case 'MOVED' : return dispatch(confirmMove());
         default: return;
       }
     }

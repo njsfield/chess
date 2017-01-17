@@ -1,10 +1,10 @@
-import findMoves from '../helpers/findmoves.js';
+import { pieceMoves } from '../helpers/fenmap.js';
 
 const selected = (state = [], {type, fen, from}) => {
 
   switch (type) {
     case 'SELECTED_PIECE':
-      return findMoves(fen, from);
+      return pieceMoves(fen, from);
     case 'CONFIRM_MOVE':
     case 'STAY':
       return [];

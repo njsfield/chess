@@ -30,6 +30,13 @@
     animation: flicker .1s linear 0s infinite alternate;
 }
 
+.user-select-none {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;   
+}
+
 @keyframes flicker {
     from { opacity: 0.5;}
     to { opacity: 1;}

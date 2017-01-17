@@ -11,7 +11,7 @@ export const darkTileClass = 'bg-animate absolute dib w-eighth h-eighth bg-brown
 export const optionTileClass = 'bg-animate absolute dib w-eighth h-eighth bg-blue-i pointer';
 
 // Piece Class
-export const pieceClass = 'absolute dib w-eighth h-eighth tc pointer f-50';
+export const pieceClass = 'absolute dib w-eighth h-eighth tc pointer user-select-none f-50';
     // Moved
     export const whiteMovedMod = 'white bg-green smooth-change z-2';
     export const blackMovedMod = 'red bg-black smooth-change z-2';
