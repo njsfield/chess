@@ -9,7 +9,7 @@ import Chess from 'chess.js';
 const isCap = (i) => /[A-Z]/.test(i);
 const ifit = (x, a, b) => x ? a : b;
 
-const prepFen = (str) =>
+export const prepFen = (str) =>
   str.replace(/\d/g, i => i.repeat(+i))
      .substring(0, 71)
      .split('/')
